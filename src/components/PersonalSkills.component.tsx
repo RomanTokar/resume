@@ -12,7 +12,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export const PersonalSkills = () => {
-  const { personalSkills } = useAppContext()
+  const {
+    state: { personalSkills },
+  } = useAppContext()
   const classes = useStyles()
 
   if (!personalSkills) return null

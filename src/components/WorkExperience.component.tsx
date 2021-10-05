@@ -11,7 +11,9 @@ import { Section } from './Section.component'
 import Brightness1Icon from '@material-ui/icons/Brightness1'
 
 export const WorkExperience = () => {
-  const { workExperience } = useAppContext()
+  const {
+    state: { workExperience },
+  } = useAppContext()
 
   if (!workExperience) return null
 
@@ -28,8 +30,11 @@ export const WorkExperience = () => {
           <List disablePadding dense>
             {e.description.map(d => (
               <ListItem key={d} alignItems={'flex-start'} disableGutters dense>
-                <ListItemIcon style={{minWidth: '1em'}}>
-                  <Brightness1Icon color={'primary'} style={{fontSize: '0.5em'}}/>
+                <ListItemIcon style={{ minWidth: '1em' }}>
+                  <Brightness1Icon
+                    color={'primary'}
+                    style={{ fontSize: '0.5em' }}
+                  />
                 </ListItemIcon>
                 <ListItemText primary={d} />
               </ListItem>

@@ -15,7 +15,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export const Languages = () => {
-  const { languages } = useAppContext()
+  const {
+    state: { languages },
+  } = useAppContext()
   const classes = useStyles()
 
   return (

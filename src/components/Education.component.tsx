@@ -4,7 +4,9 @@ import { useAppContext } from '../contexts'
 import { Section } from './Section.component'
 
 export const Education = () => {
-  const { education } = useAppContext()
+  const {
+    state: { education },
+  } = useAppContext()
 
   return (
     <Section title={'Education'}>

@@ -1,7 +1,7 @@
-import React from "react";
-import { Chip, makeStyles } from "@material-ui/core";
-import { useAppContext } from "../contexts";
-import { Section } from "./Section.component";
+import React from 'react'
+import { Chip, makeStyles } from '@material-ui/core'
+import { useAppContext } from '../contexts'
+import { Section } from './Section.component'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -12,7 +12,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export const TechnicalSkills = () => {
-  const { technicalSkills } = useAppContext()
+  const {
+    state: { technicalSkills },
+  } = useAppContext()
   const classes = useStyles()
 
   return (

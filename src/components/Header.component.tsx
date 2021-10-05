@@ -1,17 +1,17 @@
-import React from "react";
-import clsx from "clsx";
-import { Divider, makeStyles, SvgIcon, Typography } from "@material-ui/core";
-import EmailIcon from "@material-ui/icons/Email";
-import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import { useAppContext } from "../contexts";
-import { ReactComponent as SkypeIcon } from "../assets/images/skype.svg";
+import React from 'react'
+import clsx from 'clsx'
+import { Divider, makeStyles, SvgIcon, Typography } from '@material-ui/core'
+import EmailIcon from '@material-ui/icons/Email'
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid'
+import LocationOnIcon from '@material-ui/icons/LocationOn'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import { useAppContext } from '../contexts'
+import { ReactComponent as SkypeIcon } from '../assets/images/skype.svg'
 
 const useStyles = makeStyles(theme => ({
   header: {
     marginBottom: theme.spacing(2),
-    position: 'relative'
+    position: 'relative',
   },
   headerContent: {
     display: 'flex',
@@ -49,8 +49,9 @@ const useStyles = makeStyles(theme => ({
 
 export const Header = () => {
   const classes = useStyles()
-  const { firstname, lastname, status, position, photo, contacts } =
-    useAppContext()
+  const {
+    state: { firstname, lastname, status, position, photo, contacts },
+  } = useAppContext()
 
   return (
     <header className={classes.header}>
@@ -88,7 +89,7 @@ export const Header = () => {
           </Typography>
         </div>
       </div>
-      <Divider  variant={'middle'}/>
+      <Divider variant={'middle'} />
     </header>
   )
 }
