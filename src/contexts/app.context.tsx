@@ -4,6 +4,7 @@ import {
   FC,
   SetStateAction,
   useContext,
+  useEffect,
   useState,
 } from 'react'
 import photo from '../assets/images/photo_2.jpg'
@@ -127,6 +128,15 @@ const initialState = {
 }
 export const AppProvider: FC = ({ children }) => {
   const [state, setState] = useState<AppState>(initialState)
+
+  useEffect(() => {
+    const state = localStorage.getItem('state')
+
+    if (!state) return
+
+    setState(JSON.parse(state))
+  }, [])
+
   // const state: AppState = {
   //   profile:
   //     'Motivated and highly productive Backend Developer with a research background. Detail-oriented with strong skills in multi-tasking and efficient management of day-to-day office operations. Adept at building and maintaining effective working relationships with co-workers and clients through interpersonal skills.',
